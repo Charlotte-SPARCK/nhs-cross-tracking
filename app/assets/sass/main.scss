@@ -21,6 +21,18 @@ html {
     background-color: #d8dde0;
 }
 
+/* Styles for the biometrics */
+.biometrics-overlay {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure the overlay is on top */
+}
+
 /* Styles for the overlay and popup */
 .popup-overlay {
     display: none;
@@ -45,12 +57,17 @@ html {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: block;
+    
+    @media(max-width: 640px) {
+      width: 80%;
+      height: auto;
+    }
   }
 
   .popup button{
     margin-right: 20px;
-    margin-bottom: 0;
-  }
+    margin-bottom: 20px;
+  } 
   
   .popup-close {
     position: absolute;
@@ -59,5 +76,59 @@ html {
     cursor: pointer;
     font-size: 20px;
     color: #aaa;
+  }
+
+  /* Styles for the app home */
+
+  .app-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #005eb8; /* Semi-transparent black background */
+  }
+
+  .loading-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  .nhsuk-logo {
+      height: 80px;
+      width: 150px;
+      border: 0;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .app-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
+    .nhsuk-logo {
+      height: 40px;
+      width: 100px;
+    }
+  }
+
+  .app-button {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+
+    h3 {
+      color: #fff;
+    }
+
+    p {
+      color: #fff;
+    }
   }
