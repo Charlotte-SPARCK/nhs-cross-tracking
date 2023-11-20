@@ -13,23 +13,24 @@
 <!-- Homepage content -->
 {% block content %}
 
-<section>
-  <a href="nhsapp://">Open NHS App</a>
-</section>
 
-<!-- <section id="myButton" onload="myScript">
-  <div id="myPopup" class="popup">
-    <div class="popup-content">
-        <h1 class="popup-h1">
-              GeekforGeeks !
-          </h1>
-        <p>This is a popup box!</p>
-        <button id="closePopup">
-              Close
-          </button>
+<section>
+  <div id="popup-overlay" class="popup-overlay">
+    <div class="popup">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <h3>Open the NHS App</h3>
+      <p>To access specific features or content, please open the NHS App on your device.</p>
+      <button class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" type="submit" onclick="closePopup()">
+        Continue in browser
+      </button>
+      <a href="app">
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Switch to the app
+        </button>
+      </a>
     </div>
-</div>
-</section> -->
+  </div>
+</section>
 
 <!-- Personalisation and user data -->
 <!-- hero image and "We're here for you" content -->
@@ -145,9 +146,21 @@
 
 {% endblock %}
 
-<!-- JavaScript hack to do nothing if search button or link href="" clicked -->
 {% block pageScripts %}
 <script>
+  // Function to display the overlay popup when the page loads
+    window.onload = function() {
+      displayPopup();
+    };
 
+    // Function to display the popup
+    function displayPopup() {
+      document.getElementById('popup-overlay').style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+      document.getElementById('popup-overlay').style.display = 'none';
+    }
 </script>
 {% endblock %}
