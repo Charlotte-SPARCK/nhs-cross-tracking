@@ -4,8 +4,30 @@
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
 @import 'components/related-nav';
+@import 'components/beta';
+@import 'components/nhsuk';
+@import 'components/native-header';
+@import 'components/native-footer';
+@import 'components/desktop-header';
+@import 'components/desktop-footer';
+@import 'components/panel-link';
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
-  
+
+html {
+    background-color: #d8dde0;
+}
+
+.jumpoff-panel {
+    background: #c8e0f0;
+    padding: 24px !important;
+    border: 0;
+    margin-bottom: 50px;
+    margin-top: 0;
+
+    .nhsuk-button {
+        margin-bottom: auto;
+    }
+}
