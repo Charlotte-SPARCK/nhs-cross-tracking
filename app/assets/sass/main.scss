@@ -36,7 +36,7 @@ html {
 .biometrics-title {
   color: white;
   text-align: center;
-  top: 55%;
+  top: 58%;
   position: relative;
 }
 
@@ -44,13 +44,13 @@ html {
   height: 80px;
   width: 100px;
   border: 0;
-  top: 70%;
+  top: 75%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  // img {
-  //   pointer-events: none;
-  // }
+  img {
+    pointer-events: none;
+  }
 }
 
 /* Styles for the overlay and popup */
