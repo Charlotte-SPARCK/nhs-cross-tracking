@@ -1,0 +1,53 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'cct-login/layouts/layout-login.html' %}
+
+{% set PROTOTYPEURL = "login" %}
+{% set serviceName = "NHS App" %}
+{% set contentTitle = "Checking your details" %}
+{% set title = contentTitle + " - " + serviceName %}
+{% set messagingActive = "active" %}
+{% block pageScripts %}
+{% endblock %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block header %}
+  {{ header({
+    "service": {
+        "name": "NHS login",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+
+  <meta http-equiv = "refresh" content = "2; url = loading" />
+
+{% endblock %}
+
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Log in - Email
+{% endblock %}
+
+
+{% block content %}
+<form action="/{{ PROTOTYPEURL }}/login-check-your-mobile" method="post" class="form">
+
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        {{ contentTitle }}
+      </h1>
+    </legend>
+
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <div class="spinner-text nhsuk-body-l">Loading...</div>
+    </div>
+
+    
+  </fieldset>
+</form>
+{% endblock %}
