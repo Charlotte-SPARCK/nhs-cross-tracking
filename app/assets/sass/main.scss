@@ -29,8 +29,25 @@ html {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
   z-index: 9999; /* Ensure the overlay is on top */
+}
+
+.biometrics-title {
+  color: white;
+  text-align: center;
+  top: 55%;
+  position: relative;
+}
+
+.biometrics-img {
+  height: 80px;
+  width: 100px;
+  border: 0;
+  top: 70%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 /* Styles for the overlay and popup */

@@ -1,0 +1,114 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'cct-login/layouts/layout-login.html' %}
+
+{% set contentTitle = "We found your NHS login" %}
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+Log in - Email
+{% endblock %}
+
+{% block outerContent %}
+{{ backLink({
+  "href": "email",
+  "text": "Back to: Enter the security code",
+  "classes": "nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              {{ contentTitle }}
+            </h1>
+          </legend>
+
+          <form action="redirect" method="post" class="form">
+
+            <p class="nhsuk-body">
+              Enter the 6 digit security code we have sent to <strong>•••••••7789</strong>.
+            </p>
+            <!--
+              <p class="nhsuk-body">
+              You need to use this code within <strong>5 minutes</strong> or it will expire.
+              </p>
+            -->
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Not received a text?
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>When we are really busy, it may take a bit longer for your code to arrive.</p>
+                <p class="nhsuk-body">
+                  <a href="login-enter-OTP?resendOTP=true">Send the security code again</a>.
+                </p>
+              </div>
+            </details>
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="phoneOTP">
+                Security code
+              </label>
+              <div class="nhsuk-hint" id="phoneOTPHint">
+                The code is 6 digits
+              </div>
+              <input class="nhsuk-input nhsuk-input--width-10 nhsuk-u-margin-bottom-4" id="phoneOTP" name="phoneOTP" type="text" inputmode="numeric" maxlength="6" aria-describedby="phoneOTPHint">
+              <div class="nhsuk-checkboxes">
+      
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Remember this device and stop sending security codes
+                  </label>
+                </div>
+              </div>
+            </div>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  What does remember this device mean?
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p class="nhsuk-body">
+                  We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.
+                </p>
+                <p class="nhsuk-body">
+                  To keep your NHS login secure, you should only do this on your own personal or trusted devices.
+                </p>
+                <p class="nhsuk-body">
+                  We may ask if you still want us to remember this device in the future.
+                </p>
+              </div>
+            </details>
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  I cannot log in using my mobile phone
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>
+                  If you do not have access to your phone, you can <a href="/v1/acc-recovery/change-phone-enter-old-number">change your phone number securely</a>.
+                </p>
+              </div>
+            </details>
+      
+            <button class="nhsuk-button full-width" type="submit" id="button--save">
+              Continue
+            </button>
+      
+            </form>
+          
+
+
+    </div>
+  </div>
+{% endblock %}

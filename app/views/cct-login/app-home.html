@@ -13,24 +13,6 @@
 <!-- Homepage content -->
 {% block content %}
 
-<section>
-  <div id="popup-overlay" class="popup-overlay">
-    <div class="popup">
-      <span class="popup-close" onclick="closePopup()">&times;</span>
-      <h3>You are about to leave this page</h3>
-      <p>You are leaving the browser and being redirected to the native NHS App.</p>
-      <!-- <button class="nhsuk-button nhsuk-button--reverse" data-module="nhsuk-button" type="submit" onclick="closePopup()">
-        Continue in browser
-      </button> -->
-      <a href="loading">
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-          Continue
-        </button>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- Personalisation and user data -->
 <!-- hero image and "We're here for you" content -->
 <section class="nhsuk-hero nhsuk-hero--image nhsuk-hero--image-description">
@@ -146,24 +128,7 @@
 {% endblock %}
 
 {% block pageScripts %}
-<script>
-  // Function to display the overlay popup when the page loads
-    window.onload = function() {
-      displayPopup();
-    };
-
-    // Function to display the popup
-    function displayPopup() {
-      document.getElementById('popup-overlay').style.display = 'block';
-    }
-
-    // Function to close the popup
-    function closePopup() {
-      document.getElementById('popup-overlay').style.display = 'none';
-    }
-
-
-    
+<script> 
 </script>
 {% endblock %}
 

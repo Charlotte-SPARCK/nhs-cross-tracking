@@ -15,6 +15,22 @@ The NHS website - NHS
 
 <!-- Homepage content -->
 {% block content %}
+
+<section>
+  <div id="biometrics-overlay" class="biometrics-overlay">
+    <h3 class="biometrics-title">
+      Authenticate
+    </h3>
+    <p class="biometrics-title">Scan your fingerprint</p>
+    <div class="biometrics-img">
+      <a href="app-home"><img src="/images/fingerprint.png" alt=""></a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
 <section>
     <div class="app-overlay">
       <div class="nhsuk-header__logo app-logo">
@@ -36,6 +52,15 @@ The NHS website - NHS
 </section>
 
 
+
+
+{% endblock %}
+
+
+{% block pageScripts %}
+<script>
+    
+</script>
 {% endblock %}
 
 
