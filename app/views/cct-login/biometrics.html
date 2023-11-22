@@ -22,8 +22,8 @@ The NHS website - NHS
       Authenticate
     </h3>
     <p class="biometrics-title">Scan your fingerprint</p>
-    <div class="biometrics-img">
-      <a href="app-home"><img src="/images/fingerprint.png" alt=""></a>
+    <div class="biometrics-img" id="clickAndHoldButton">
+      <img src="/images/fingerprint.png" alt="">
     </div>
   </div>
 </div>
@@ -59,7 +59,30 @@ The NHS website - NHS
 
 {% block pageScripts %}
 <script>
-    
+    let clickTimer;
+    const holdDuration = 1000; // Duration in milliseconds (2 seconds) - adjust as needed
+
+    // Function to open the link after holding for a specific duration
+    function openLink() {
+      window.location.href = 'app-home'; // Replace with your desired URL
+    }
+
+    // Function to handle click and hold
+    function handleClickAndHold() {
+      clickTimer = setTimeout(openLink, holdDuration);
+    }
+
+    // Function to cancel the click and hold action if released before duration
+    function cancelClickAndHold() {
+      clearTimeout(clickTimer);
+    }
+
+    // Event listeners for mouse and touch events
+    const button = document.getElementById('clickAndHoldButton');
+    button.addEventListener('mousedown', handleClickAndHold);
+    button.addEventListener('touchstart', handleClickAndHold);
+    button.addEventListener('mouseup', cancelClickAndHold);
+    button.addEventListener('touchend', cancelClickAndHold);
 </script>
 {% endblock %}
 
