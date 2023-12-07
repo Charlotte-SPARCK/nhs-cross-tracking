@@ -9406,3 +9406,7 @@ html {
 .app-button p {
   color: #fff;
 }
+
+.nhsuk-warning-callout {
+  padding-top: 24px !important;
+}

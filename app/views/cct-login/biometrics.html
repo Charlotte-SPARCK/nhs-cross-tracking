@@ -22,9 +22,11 @@ The NHS website - NHS
       Authenticate
     </h3>
     <p class="biometrics-title">Scan your fingerprint</p>
-    <div class="biometrics-img" id="clickAndHoldButton">
-      <img src="/images/fingerprint.png" alt="">
-    </div>
+    <a href="app-home">
+      <div class="biometrics-img">
+        <img src="/images/fingerprint.png" alt="">
+      </div>
+    </a>
   </div>
 </div>
 
@@ -58,7 +60,7 @@ The NHS website - NHS
 
 
 {% block pageScripts %}
-<script>
+<!-- <script>
     let clickTimer;
     const holdDuration = 1000; // Duration in milliseconds (2 seconds) - adjust as needed
 
@@ -83,7 +85,7 @@ The NHS website - NHS
     button.addEventListener('touchstart', handleClickAndHold);
     button.addEventListener('mouseup', cancelClickAndHold);
     button.addEventListener('touchend', cancelClickAndHold);
-</script>
+</script> -->
 {% endblock %}
 
 
